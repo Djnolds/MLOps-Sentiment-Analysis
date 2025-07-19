@@ -4,6 +4,7 @@ import pickle
 import logging
 import yaml
 import mlflow
+import dagshub
 import mlflow.sklearn
 from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -29,6 +30,7 @@ file_handler.setFormatter(formatter)
 
 logger.addHandler(console_handler)
 logger.addHandler(file_handler)
+
 
 
 def load_data(file_path: str) -> pd.DataFrame:
@@ -127,6 +129,10 @@ def save_model_info(run_id: str, model_path: str, file_path: str) -> None:
 
 
 def main():
+    dagshub.init(repo_owner='djnold', repo_name='mlops-project', mlflow=True)
+    # os.environ['MLFLOW_TRACKING_USERNAME'] = 'djnold'
+    # os.environ['MLFLOW_TRACKING_PASSWORD'] = '25300183d66295cab72caeac97605522b0b6245e'
+    # mlflow.set_tracking_uri("https://dagshub.com/djnold/mlops-project.mlflow/")
     mlflow.set_tracking_uri("https://dagshub.com/djnold/mlops-project.mlflow")
 
     mlflow.set_experiment('dvc-pipeline-runs')
@@ -149,8 +155,8 @@ def main():
             test_data = load_data(os.path.join(root_dir, 'data/interim/test_processed.csv'))
 
             # Prepare test data
-            X_test_tfidf = vectorizer.transform(test_data['clean_comment'].values)
-            y_test = test_data['category'].values
+            X_test_tfidf = vectorizer.transform(test_data['statement'].values)
+            y_test = test_data['sentiment'].values
 
             # Create a DataFrame for signature inference (using first few rows as an example)
             input_example = pd.DataFrame(X_test_tfidf.toarray()[:5], columns=vectorizer.get_feature_names_out())  # <--- Added for signature

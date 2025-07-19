@@ -4,8 +4,10 @@ import json
 import mlflow
 import logging
 import os
+import dagshub
 
 # Set up MLflow tracking URI
+dagshub.init(repo_owner='djnold', repo_name='mlops-project', mlflow=True)
 mlflow.set_tracking_uri("https://dagshub.com/djnold/mlops-project.mlflow")
 
 
