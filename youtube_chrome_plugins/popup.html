@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>YouTube Comment Insights</title>
+  <style>
+    /* Dark Theme */
+    body {
+      font-family: Arial, sans-serif;
+      padding: 10px;
+      background-color: #1e1e1e;
+      color: #f1f1f1;
+      margin: 0;
+      box-sizing: border-box;
+      width: 320px; /* Set a width that fits the Chrome extension popup */
+    }
+    h1 {
+      font-size: 20px;
+      color: #ffffff;
+    }
+    .section {
+      margin-bottom: 15px;
+    }
+    .section-title {
+      font-weight: bold;
+      color: #0099ff;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+    .comment-list {
+      list-style: none;
+      padding: 0;
+    }
+    .comment-item {
+      margin: 8px 0;
+      padding: 8px;
+      background-color: #444;
+      border-radius: 4px;
+    }
+    .comment-sentiment {
+      font-weight: bold;
+      color: #ffffff;
+    }
+    /* Image Styling */
+    img {
+      width: 100%;
+      margin-top: 20px;
+    }
+    /* Metrics Styling */
+    .metrics-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .metric {
+      width: 48%;
+      background-color: #444;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 4px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+    .metric-title {
+      font-size: 12px;
+      color: #cccccc;
+    }
+    .metric-value {
+      font-size: 22px;
+      font-weight: bold;
+      color: #ffffff;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>YouTube Comment Insights</h1>
+  <div id="output" class="section"></div>
+  <script src="popup.js"></script>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Comment Insights</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 10px;
+            background-color: #1e1e1e;
+            width: 380px;
+            /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+            color: #f1f1f1;
+            overflow-x: hidden;
+        }
+
+        .popup-container {
+            background: #444;
+            backdrop-filter: blur(10px);
+            border-radius: 4px;
+            margin: 8px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        .header {
+            background:#444;
+            color: #ffffff;
+            padding: 16px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .header .subtitle {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .metric-bar {
+            margin-bottom: 10px;
+        }
+
+        .metric-label {
+            font-size: 12px;
+            margin-bottom: 4px;
+            color: #cccccc;
+        }
+
+        .bar-container {
+            background: #333;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 12px;
+            position: relative;
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            width: 0%;
+            transition: width 0.6s ease;
+        }
+
+        .bar-value {
+            font-size: 10px;
+            text-align: right;
+            margin-top: 4px;
+            color: #aaa;
+        }
+
+        .metric-group {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+  <h1>YouTube Comment Insights</h1>
+  <div id="output" class="section"></div>
+  <script src="popup.js"></script>
+</body>
+</html> -->
+<!-- <body>
+    <div class="popup-container">
+        <div class="header">
+            <h1>Comment Insights</h1>
+            <div class="subtitle">Realtime sentiment overview</div>
+        </div>
+        <div class="content">
+            <div class="metric-group">
+                <div class="metric-bar">
+                    <div class="metric-label">Positive Comments</div>
+                    <div class="bar-container">
+                        <div class="bar-fill" style="width: 64%;"></div>
+                    </div>
+                    <div class="bar-value">64%</div>
+                </div>
+                <div class="metric-bar">
+                    <div class="metric-label">Neutral Comments</div>
+                    <div class="bar-container">
+                        <div class="bar-fill" style="width: 22%; background: linear-gradient(90deg, #FFC107, #ffb300);"></div>
+                    </div>
+                    <div class="bar-value">22%</div>
+                </div>
+                <div class="metric-bar">
+                    <div class="metric-label">Negative Comments</div>
+                    <div class="bar-container">
+                        <div class="bar-fill" style="width: 14%; background: linear-gradient(90deg, #f44336, #d32f2f);"></div>
+                    </div>
+                    <div class="bar-value">14%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> -->
+
+
+                
